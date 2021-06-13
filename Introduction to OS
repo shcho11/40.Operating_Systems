@@ -76,9 +76,21 @@ I/O Structure (입출력 구조)
   사용자모드에 있는 프로그램이 커널 함수를 직접 호출할 수 없으므로 따로 프로그램이 커널 호출을 요청하는 시스템을 만들어서 커널이 처리해야 할 일을 프로그램으로부터 받아서 처리하는 것
   만약에 없으면 사용자모드에서 아무것도 할 수 없게 됨. 그래픽 출력이라거나 파일 다루는 등 행위도 커널의 도움으로 이루어짐.)
   
+  - Device-status table은 각 입출력 디바이스의 type, address, state 등을 알려주는 엔트리를 포함한다.
+  - 운영체제는 장치 상태를 결정하도록, 그리고 테이블 엔트리가 인터럽트를 포함하도록 수정하기 위해 입출력 장치를 index into 한다.
   
+ :  Multiprocessor system의 장점: throughput 증가 / economy in scale / reliability 증가(하나의 프로세스 실패가 시스템을 멈추지않는다)
   
-  
+ Clustered Systems
+: 멀티프로세서시스템과 같이 multiple systems work together / Storage-area network(SAN)통해 스토리지 공유 / some are for high-performance computing(HPC) / some have distributed lock manager (DLM)
+ 
+: Progam is Passive entity, Process is Active entity
+ㅣ Single threaded process have one program conter (specify location to execute next instructions)
+: Memory management: keep track / decide which process to move into/out of memory / allocating&deallocating memory space
+: cache coherency: all CPUs have the most Recent value in their cache
+: distributed system : collection of physically separate&heterogeneous systems with access to various resources
+: Peer to Peer computing : 모든 노드는 peers로 본다 / clients와 servers를 구분하지 X
+
 
 
 
