@@ -43,6 +43,20 @@ Common Functions of Interrupts (인터럽트의 일반적인 기능들)
 : trap 또는 exception은 에러나 사용자요청에 따라 발생하는 software-generated interrupt이다.
 : OS는 인터럽트 드리븐(interrupt-driven)으로 동작한다.
 
+Storage Structure
+
+: Main memory : CPU가 직접 액세스할 수 있는 유일한 대용량 스토리지. 휘발성.
+: Secondary storage : Main memory의 확장. 대용량 비휘발성 스토리지 제공. 
+: Hard disks : 자성 기록 물질이 도포된, 금속 또는 유리 플래터 (딱딱한 성질의 원반)
+- 디스크 표면은 논리적으로 tracks로 구분되며, 이것은 다시 sectors 로 구분된다.
+- 디스크 컨트롤러는 디바이스와 컨트롤러 사이의 logical interactions(논리적 상호작용)을 제어한다.
+: Solid State Drives : 하드디스크보다 속도가 더 빠르며, 비휘발성.
+- 다양한 기술의 결합.
+- 더욱 대중화되고 있음.
+
+: Storage의 계층 구조는 Speed, Cost, Volatility 에 의해 정의됨
+: Caching (캐싱) :  더 빠른 속도의 저장장치로 정보를 복사하는 행위. 메인메모리는 Secondary storage에 있어서는 최종적 cahce로 볼 수 있음.
+
 
 
 
