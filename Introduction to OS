@@ -58,7 +58,27 @@ Storage Structure
 : Caching (캐싱) :  더 빠른 속도의 저장장치로 정보를 복사하는 행위. 메인메모리는 Secondary storage에 있어서는 최종적 cahce로 볼 수 있음.
 
 
+I/O Structure (입출력 구조)
 
+: 일반적인 목적의 컴퓨터 시스템은 CPU와 복수의 (common bus로 서로 연결되는) device controllers로 구성되어 있다.
+- 각각의 device controllers는 특정 타입의 디바이스를 담당.
+- 한 device controller는 some local buffer storage와 set of special-purpose registers을 유지시킨다.
+: 운영체제는 각 디바이스 컨트롤러당 한개의 디바이스 드라이버를 가진다.
+
+: 입출력이 시작되면, controls이 입출력이 완료(completion)되어야만 user program에 복귀하는 경우
+- Wait Instruction은 다음 인터럽트 때까지 CPU를 idle(유휴) 상태로 만든다.
+- Wait Loop : 메모리 액세스에 대한 contention(경합)
+- 최대 하나의 I/O request만 outstanding 할 수 있음. (동시에 I/O Processing 발생 불가.)
+
+: 입출력이 시작되면 controls이 입출력이 완료될때까지 기다리지 않고 user program에 복귀하는 경우
+- System call : 입출력 완료 때까지 user가 기다리도록 운영체제가 허용해 줄 것을 요청하는 것.
+  (나무위키 설명 :  커널에 요청하여 커널 모드에서 처리하고 그 결과를 사용자 모드의 프로그램에게 전달하는 것)
+  사용자모드에 있는 프로그램이 커널 함수를 직접 호출할 수 없으므로 따로 프로그램이 커널 호출을 요청하는 시스템을 만들어서 커널이 처리해야 할 일을 프로그램으로부터 받아서 처리하는 것
+  만약에 없으면 사용자모드에서 아무것도 할 수 없게 됨. 그래픽 출력이라거나 파일 다루는 등 행위도 커널의 도움으로 이루어짐.)
+  
+  
+  
+  
 
 
 
